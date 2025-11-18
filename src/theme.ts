@@ -1,0 +1,24 @@
+import { createTheme } from '@mui/material/styles';
+
+/** Shared MUI theme tuned to match the Tailwind palette. */
+export const theme = createTheme({
+  palette: {
+    mode: 'light',
+    primary: {
+      main: '#2563eb',
+    },
+    secondary: {
+      main: '#f97316',
+    },
+    background: {
+      default: '#f8fafc',
+      paper: '#ffffff',
+    },
+  },
+  shape: {
+    borderRadius: 12,
+  },
+  typography: {
+    fontFamily: 'Inter, "Helvetica Neue", system-ui, -apple-system, BlinkMacSystemFont, sans-serif',
+  },
+});
