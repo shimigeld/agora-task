@@ -4,9 +4,7 @@ import { EmptyState } from './EmptyState';
 import { ErrorDialog } from './ErrorDialog';
 import { Loader } from './Loader';
 
-/**
- * Chooses the correct body state (loader, empty, results) and keeps the error dialog mounted.
- */
+/** Shows loader, empty state, or results based on context flags*/
 export const Content = () => {
     const { isLoading, isFetching, showEmptyState } = useCountriesContext();
 

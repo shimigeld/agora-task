@@ -1,9 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import { useCountriesContext } from '../context/CountriesContext';
 
-/**
- * Communicates that a search returned no matches and mirrors the current query.
- */
+/** Empty state message when the current search returns no results */
 export const EmptyState = () => {
   const { debouncedSearch } = useCountriesContext();
 
@@ -13,7 +11,7 @@ export const EmptyState = () => {
         No results found for: {debouncedSearch || 'your search'}
       </Typography>
       <Typography variant="body2" className="mt-2 text-slate-500">
-        Try adjusting your search term or sorting preferences.
+        Try adjusting your search term.
       </Typography>
     </Box>
   );

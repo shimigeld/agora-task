@@ -3,7 +3,7 @@ import { Content } from './components/Content';
 import { Header } from './components/Header';
 import { CountriesProvider } from './context/CountriesContext';
 
-/** Root component wiring providers and layout shell. */
+/** Top-level React component that renders the layout */
 function App() {
   return (
     <CountriesProvider>

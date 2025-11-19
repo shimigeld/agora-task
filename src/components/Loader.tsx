@@ -1,6 +1,6 @@
 import { Box, CircularProgress, Typography } from '@mui/material';
 
-/** Visual affordance displayed while queries are running. */
+/**  Loadeder while the countries request is pending/loading. */
 export const Loader = () => (
   <Box className="flex flex-col items-center justify-center py-16" role="status">
     <CircularProgress color="primary" size={64} thickness={4} />

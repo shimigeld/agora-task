@@ -5,9 +5,7 @@ interface CountryCardProps {
   country: Country;
 }
 
-/**
- * Renders a single country's summary with consistent flag aspect ratio.
- */
+/** Single country card that show the country details. Props: { country } supplies the country data to display. */
 export const CountryCard = ({ country }: CountryCardProps) => (
   <Card
     data-testid="country-card"

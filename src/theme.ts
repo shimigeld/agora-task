@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 
-/** Shared MUI theme tuned to match the Tailwind palette. */
+/** Material UI theme that mirrors the Tailwind color palette. */
 export const theme = createTheme({
   palette: {
     mode: 'light',

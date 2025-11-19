@@ -1,6 +1,6 @@
 import { QueryClient } from '@tanstack/react-query';
 
-/** Central TanStack Query client with opinionated defaults for this app. */
+/** Shared TanStack Query client with app-specific defaults. */
 export const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

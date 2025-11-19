@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
 
-/** Delay applied to rapid search input updates. */
+/** Number of milliseconds to wait before emitting a new value. */
 const SEARCH_DEBOUNCE_MS = 500;
 
-/**
- * Returns a debounced copy of the provided value, updating after inactivity.
- */
+/** Custom hook that returns a debounced copy of the given value */
 export const useDebouncedValue = <T,>(value: T): T => {
   const [debouncedValue, setDebouncedValue] = useState(value);
 

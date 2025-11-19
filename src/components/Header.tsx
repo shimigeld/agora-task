@@ -2,9 +2,7 @@ import { Paper, Stack, Typography } from '@mui/material';
 import { SearchBar } from './SearchBar';
 import { SortControls } from './SortControls';
 
-/**
- * Top-level layout block showing the title, search field, and sort controls.
- */
+/** Renders the page header with the title, SearchBar, and SortControls */
 export const Header = () => {
   return (
     <Stack spacing={3}>

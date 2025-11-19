@@ -19,9 +19,7 @@ const SORT_OPTIONS: Record<SortKey, SortOption> = {
   [SORT_KEY.PopulationDesc]: { field: 'population', direction: 'desc' },
 };
 
-/**
- * Dropdown select that maps UI-friendly labels to SortOption values.
- */
+/** Dropdown for sorting order for countries via Name(A-Z/Z-A)/Population(ascending/descending) */
 export const SortControls = () => {
   const { sortOption, setSortOption } = useCountriesContext();
 

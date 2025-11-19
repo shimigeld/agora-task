@@ -1,7 +1,7 @@
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
 import { useCountriesContext } from '../context/CountriesContext';
 
-/** Surfaces fetch errors and offers a retry affordance. */
+/** Shows an error dialog with a retry button when ther request was failed */
 export const ErrorDialog = () => {
   const { isError, error, refetch } = useCountriesContext();
 

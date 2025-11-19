@@ -2,7 +2,7 @@ import { Box } from '@mui/material';
 import { useCountriesContext } from '../context/CountriesContext';
 import { CountryCard } from './CountryCard';
 
-/** Displays the responsive country card grid driven by the sorted context data. */
+/** Grid of countries that display CountryCard according to search term(if any) and sorting order. */
 export const CountryGrid = () => {
   const { sortedCountries } = useCountriesContext();
 

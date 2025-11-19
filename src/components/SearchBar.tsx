@@ -4,9 +4,7 @@ import { IconButton, InputAdornment, TextField } from '@mui/material';
 import type { ChangeEvent } from 'react';
 import { useCountriesContext } from '../context/CountriesContext';
 
-/**
- * Controlled search input with inline adornments and a contextual clear action.
- */
+/** Search input with built-in search and clear icons */
 export const SearchBar = () => {
   const { searchTerm, setSearchTerm } = useCountriesContext();
 

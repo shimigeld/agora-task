@@ -4,12 +4,10 @@ import { useDebouncedValue } from '../hooks/useDebouncedValue';
 import { useCountriesQuery } from '../hooks/useCountriesQuery';
 import type { Country, SortOption } from '../types';
 
-/** Default ordering when the app first loads. */
+/** Default sort order (name ascending) used when the app first loads. */
 const DEFAULT_SORT: SortOption = { field: 'name', direction: 'asc' };
 
-/**
- * Returns a new array sorted by the requested field/direction without mutating input.
- */
+/** Returns a new array sorted by the requested field and direction. */
 const sortCountries = (countries: Country[], sort: SortOption) => {
   const sorted = [...countries];
   if (sort.field === 'name') {
@@ -24,9 +22,7 @@ const sortCountries = (countries: Country[], sort: SortOption) => {
   );
 };
 
-/**
- * Shape of the data surface shared through CountriesContext.
- */
+/** Everything exposed by CountriesContext. */
 export interface CountriesContextValue {
   searchTerm: string;
   setSearchTerm: (value: string) => void;
@@ -42,14 +38,8 @@ export interface CountriesContextValue {
   showEmptyState: boolean;
 }
 
-/**
- * React context that exposes derived country data, loading flags and controls.
- */
 const CountriesContext = createContext<CountriesContextValue | undefined>(undefined);
 
-/**
- * Accessor hook that ensures consumers are wrapped by the provider.
- */
 export const useCountriesContext = () => {
   const context = useContext(CountriesContext);
   if (!context) {
@@ -58,9 +48,7 @@ export const useCountriesContext = () => {
   return context;
 };
 
-/**
- * Provides country search/sort state and derived values to the component tree.
- */
+/** Context provider for children. Props: { children } is the subtree that needs country data. */
 export const CountriesProvider = ({ children }: PropsWithChildren) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOption, setSortOption] = useState<SortOption>(DEFAULT_SORT);

@@ -2,10 +2,10 @@ import axios from 'axios';
 import { httpClient } from '../lib/httpClient';
 import type { Country, CountryApiResponse } from '../types';
 
-/** Fields requested from the Rest Countries API to keep payloads lean. */
+/** Query params sent to the Rest Countries API so we only fetch the fields we need. */
 const FIELDS = 'name,capital,flags,population,cca3';
 
-/** Maps the API response shape to the internal Country contract. */
+/** Converts an API response object into the Country shape used by the UI. */
 const mapCountry = (country: CountryApiResponse): Country => ({
   code: country.cca3,
   name: country.name.common,
@@ -15,9 +15,7 @@ const mapCountry = (country: CountryApiResponse): Country => ({
   flagAlt: country.flags.alt ?? `${country.name.common} flag`,
 });
 
-/**
- * Fetches the country list, handling empty searches and 404 "no results" gracefully.
- */
+/** Fetches countries for the given searchTerm and optional AbortSignal. */
 export const fetchCountries = async (searchTerm: string, signal?: AbortSignal): Promise<Country[]> => {
     const trimmed = searchTerm.trim();
     const path = trimmed ? `/name/${encodeURIComponent(trimmed)}` : '/all';
